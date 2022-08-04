@@ -6,8 +6,7 @@ class Api::PostsController < ApplicationController
     def create 
         user = @current_user
         post = user.posts.create(post_params)
-        post_user.isAdmin = true
-        post_user.save
+        post.save
         render json: post, status: :created
     end
 
@@ -22,16 +21,22 @@ class Api::PostsController < ApplicationController
     end
 
     def update 
-        @post = Post.find_by(id: params[:id])
-        unless user?(@post.user)
-          redirect_to user_path(current_user)
-        end
+        user = @current_user
+        post = user.posts.find(params[:id])
+        post.update(post_params)
         render json: post, status: :accepted
+    end
+
+    def destroy 
+        user = @current_user
+        @post = user.posts.find(params[:id])
+        @post.destroy
+        head :no_content
     end
 
     private
 
-    def posts_params
+    def post_params
         params.permit(:title, :content)
     end
 
