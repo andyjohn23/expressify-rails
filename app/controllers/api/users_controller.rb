@@ -32,12 +32,11 @@ class Api::UsersController < ApplicationController
     def destroy
         @current_user.destroy
         head :no_content
-
     end
 
     private 
 
     def user_params
-        params.permit(:email, :username, :location, :password, :password_confirmation, :posts)
+        params.permit(:email, :username, :location, :password, :posts)
     end
 end
