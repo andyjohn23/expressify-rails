@@ -22,5 +22,8 @@ module Expressify
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
     config.action_dispatch.cookies_same_site_protection = :strict
+    config.generators do |s|
+      s.orm :active_record, primary_key_type: :uuid
+    end
   end
 end
