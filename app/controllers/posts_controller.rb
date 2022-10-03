@@ -25,11 +25,17 @@ class PostsController < ApplicationController
         post = Post.find(params[:id])
         render json: post
     end
+
+    def destroy
+        post = Post.find(params[:id])
+        post.destroy
+        render json: {}, status: :no_content
+    end
         
     private
 
     def post_params
-        params.permit(:title, :content, :location, :image, :user_id)
+        params.permit(:title, :content, :location, :image_url, :user_id)
     end
 
     def render_unprocessable_entity(invalid)
