@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.permit(:title, :content, :location, :image_url, :user_id)
+        params.permit(:title, :content, :location, :image, :user_id)
     end
 
     def render_unprocessable_entity(invalid)
