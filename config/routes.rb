@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
-  namespace :api do
-    resources :users, only: [:index, :destroy, :update]
+  scope :api do
+    resources :users, only: [:index, :create, :destroy, :update]
     resources :posts
 
-    post '/register', to: "users#create"
-    get '/me', to: "users#show"
-
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
-
+    post "user/login", to: "users_authentication#create"
   end
 end
