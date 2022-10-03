@@ -3,6 +3,6 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create, :destroy, :update]
     resources :posts
 
-    post "user/login", to: "users_authentication#create"
+    post "user/login", to: "sessions#create"
   end
 end
