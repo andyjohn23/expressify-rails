@@ -23,5 +23,6 @@ group :development, :test do
 end
 
 group :development do
+  gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 end
 
