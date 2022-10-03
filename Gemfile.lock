@@ -93,6 +93,10 @@ GEM
     digest (3.1.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     down (5.3.1)
       addressable (~> 2.8)
     erubi (1.11.0)
@@ -253,6 +257,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   debug
+  dotenv-rails (~> 2.8, >= 2.8.1)
   image_processing (~> 1.12, >= 1.12.2)
   jbuilder
   jwt
