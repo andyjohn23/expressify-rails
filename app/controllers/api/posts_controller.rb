@@ -37,7 +37,7 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-        params.permit(:title, :content)
+        params.permit(:title, :content, :user_id)
     end
 
     def set_post
