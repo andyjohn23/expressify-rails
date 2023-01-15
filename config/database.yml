@@ -15,7 +15,7 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV[‘DATABASE_URL’] %>
+  url: <%= ENV["DATABASE_URL"] %>
   database: expressify_production
   username: expressify
   password: <%= ENV["EXPRESSIFY_DATABASE_PASSWORD"] %>
